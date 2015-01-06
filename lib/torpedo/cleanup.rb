@@ -59,6 +59,7 @@ module Torpedo
         end
       end
       if VOLUME_ENABLED and CLEAN_UP_VOLUMES then
+        sleep 120
         volume_conn = Torpedo::Volume::Helper::get_connection
         volume_conn.volumes.each do |volume|
           volume = volume_conn.volumes.get(volume.id)
